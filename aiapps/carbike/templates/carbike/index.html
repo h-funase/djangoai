@@ -1,19 +1,21 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    {% load bootstrap4 %}
-    {% bootstrap_css %}
-    <link rel="stylesheet" type="text/css" href="{% static 'carbike/css/style.css' %}"
-    {% bootstrap_javascript jquery='full' %}
-    <車・バイク判定 | {% block title %}{% endblock %}</title>
-</head>
-</body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">画像判定AIアプリ</a>
-    </nav>
-    <div class="container">
-        {% block content %}{% endblock %}
+{% extends 'carbike/base.html'%}
+{% block title %}車・バイク判定アプリメニュー {% endblock %}
+
+{% block content %}
+<div>
+    <h4 class="mt-4 mb-5 border-bottom">車・バイク推定アプリ</h4>
+    <p>画像ファイルを選択して指定ボタンをクリックしてください。</p>
+    <form action="{% url 'carbike:predict' %}" method="post" class="form" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">   
+        <div class="custom-file">
+            {{ form.image}}
+            <label class="custom-file-label" for="customFile">
+                推定したいファイルを選択してください。
+            </label>
+        </div>
     </div>
-</body>
-</html>
+    <button type="submit" class="btn btn-primary">推定する</button>
+    </form>
+</div>
+{% endblock %}
