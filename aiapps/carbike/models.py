@@ -14,7 +14,7 @@ class Photo(models.Model):
 
     IMAGE_SIZE = 224 # 画像サイズ
     MODEL_FILE_PATH = './carbike/ml_models/vgg16_transfer.h5' # モデルファイル
-    classes = ["car", "motorbike"]
+    classes = ["自動車", "バイク"]
     num_classes = len(classes)
     
     # 引数から画像ファイルを参照して読み込む
