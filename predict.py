@@ -5,7 +5,7 @@ from PIL import Image
 import sys
 
 # パラメーターの初期化
-classes = ["car", "motorbike"]
+classes = ["dog", "cat"]
 num_classes = len(classes)
 image_size = 224
 
