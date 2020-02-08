@@ -1,17 +1,17 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.template import  loader
+from django.template import loader
 from .forms import PhotoForm
 from .models import Photo
 
 def index(request):
     template = loader.get_template('dogcat/index.html')
-    context = {'form':PhotoForm()}
+    context = {'form': PhotoForm()}
     return HttpResponse(template.render(context, request))
 
 def predict(request):
     if not request.method == 'POST':
-        return 
+        return
         redirect('dogcat:index')
 
     form = PhotoForm(request.POST, request.FILES)
@@ -29,5 +29,6 @@ def predict(request):
         'predicted': predicted,
         'percentage': percentage,
     }
-    
+
     return HttpResponse(template.render(context, request))
+

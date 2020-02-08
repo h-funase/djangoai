@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-import dogcat.views as dogcat
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),

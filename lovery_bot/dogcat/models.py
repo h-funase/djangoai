@@ -16,14 +16,14 @@ class Photo(models.Model):
     MODEL_FILE_PATH = './dogcat/ml_models/vgg16_transfer.h5' # モデルファイル
     classes = ["犬", "猫"]
     num_classes = len(classes)
-    
+
     # 引数から画像ファイルを参照して読み込む
     def predict(self):
         model = None
         global graph
         with graph.as_default():
             model = load_model(self.MODEL_FILE_PATH)
-            
+
             img_data = self.image.read()
             img_bin = io.BytesIO(img_data)
 
@@ -35,12 +35,10 @@ class Photo(models.Model):
             X.append(data)
             X = np.array(X)
 
-
             result = model.predict([X])[0]
             predicted = result.argmax()
             percentage = int(result[predicted] * 100)
 
-            # print(self.classes[predicted], percentage)
             return self.classes[predicted], percentage
 
     def image_src(self):
@@ -48,3 +46,5 @@ class Photo(models.Model):
             base64_img = base64.b64encode(img.read()).decode()
 
             return 'data:' + img.file.content_type + ';base64,' + base64_img
+
+

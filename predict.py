@@ -1,11 +1,11 @@
 import numpy as np
 from tensorflow import keras
-from tensorflow.keras.models import  Sequential, Model, load_model
+from tensorflow.keras.models import Sequential, Model,load_model
 from PIL import Image
 import sys
 
 # パラメーターの初期化
-classes = ["dog", "cat"]
+classes = ["犬", "猫"]
 num_classes = len(classes)
 image_size = 224
 
