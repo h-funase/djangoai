@@ -4,6 +4,11 @@ from django.template import loader
 from .forms import PhotoForm
 from .models import Photo
 
+def top_page(request):
+    template = loader.get_template('dogcat/top_page.html')
+    context = {}
+    return HttpResponse(template.render(context, request))
+
 def index(request):
     template = loader.get_template('dogcat/index.html')
     context = {'form': PhotoForm()}

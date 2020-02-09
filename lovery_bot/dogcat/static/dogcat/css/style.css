@@ -1,0 +1,22 @@
+.navbar.navbar-extend-lg.navbar-light.bg-light{
+height:100px;
+}
+
+.navbar-brand{
+font-size:50px;
+}
+
+.bot-top-page{
+height:100vh;
+/* width:500px; */
+background-image: url("ダウンロード.png");
+background-size:cover;
+}
+
+.dogcat_answer{
+    font-size:40px;
+}
+
+.dogcat_percentage{
+    font-size:40px;
+}

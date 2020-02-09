@@ -3,8 +3,6 @@
 
 {% block content %}
 <div>
-    <h4 class="mt-4 mb-5 border-bottom">推定結果</h4>
-
     <table class='table'>
         <tbody>
             <tr>
@@ -15,12 +13,12 @@
                 <td>画像ファイル</td>
                 <td><img class='preview-img' src={{ photo_data }} ></img></td>
                 </tr>
-            <tr>
+            <tr class="dogcat_answer">
                 <td>推定結果</td>
                 <td>{{ predicted }}</td>
             </tr>
-            <tr>
-                <td>推定確率</td>
+            <tr class="dogcat_percentage">
+                <td>確率</td>
                 <td>{{ percentage }} %</td>
             </tr>
         </tbody>
