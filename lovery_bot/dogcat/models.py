@@ -7,7 +7,7 @@ from tensorflow.keras.models import load_model
 from PIL import Image
 import io, base64
 
-graph = tf.get_default_graph()
+# graph = tf.get_default_graph()
 
 class Photo(models.Model):
     image = models.ImageField(upload_to='photos')
