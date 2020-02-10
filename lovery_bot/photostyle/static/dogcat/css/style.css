@@ -1,0 +1,35 @@
+.navbar.navbar-extend-lg.navbar-light.bg-light{
+height:100px;
+}
+
+.navbar-brand{
+font-size:50px;
+}
+
+
+
+.dogcat_answer{
+    font-size:40px;
+}
+
+.dogcat_percentage{
+    font-size:40px;
+}
+
+
+
+
+
+.top-content{
+    display:flex;
+}
+.bot-top-page{
+    height:100vh;
+    width: 50%;
+    background-image: url("bot-half.png");
+    background-size: cover;
+}
+.select-content{
+    height:100vh;
+    width:50%;
+}

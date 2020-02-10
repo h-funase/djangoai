@@ -1,13 +1,12 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
-from .forms import PhotoForm
-from .models import Photo
+
 
 
 def select(request):
     template = loader.get_template('photostyle/select.html')
-    context = {'form': PhotoForm()}
+    context = {}
     return HttpResponse(template.render(context, request))
 
 def generate(request):
