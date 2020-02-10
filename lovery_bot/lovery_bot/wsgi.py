@@ -14,3 +14,16 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'lovery_bot.settings')
 
 application = get_wsgi_application()
+
+# for Heroku
+import os
+
+from django.core.wsgi import get_wsgi_application
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'books.settings')
+
+application = get_wsgi_application()
+
+# ファイルの末尾に以下を追記
+from whitenoise.django import DjangoWhiteNoise
+application = DjangoWhiteNoise(application)

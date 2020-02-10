@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
-
+import django_heroku 
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -120,3 +120,25 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+
+
+# for Heroku
+import dj_database_url
+DATABASES['default'] = dj_database_url.config()
+ 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+ 
+ALLOWED_HOSTS = ['*']
+ 
+STATIC_ROOT = 'staticfiles'
+ 
+DEBUG = False
+ 
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+# Activate Django-Heroku.
+django_heroku.settings(locals())
