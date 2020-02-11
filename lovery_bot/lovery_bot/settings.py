@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'lovery_bot.wsgi.application'
+# WSGI_APPLICATION = 'lovery_bot.wsgi.application'
 
 
 # Database
@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'lovery_bot.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'lovery_bot',
+        'USER': 'hikaru',
+        'PASSWORD': 'hikaru1220',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
